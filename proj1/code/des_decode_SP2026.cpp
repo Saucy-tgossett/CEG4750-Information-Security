@@ -13,30 +13,39 @@ using namespace std;
 #include"cryptopp/modes.h"
 
 using namespace CryptoPP;
-string des_decode(string & cipher,byte key[])
+
+//edited code
+string des_decode(string & cipher, byte key[], byte iv[])
 {
-	string plain;
-	//decryption
-	try
-	{
-		ECB_Mode< DES >::Decryption dec;
-		dec.SetKey(key, DES::DEFAULT_KEYLENGTH);
-		StringSource s(cipher, true, new StreamTransformationFilter(dec, new StringSink(plain)));  
-		cout << "recovered text: " << plain<< endl;
-	}
-	catch(const CryptoPP::Exception& e)
-	{
-		cerr << e.what() << endl;
-		exit(1);
-	}
-	return plain;	
+    string plain;
+    try
+    {
+        CBC_Mode<DES>::Decryption dec;
+        dec.SetKeyWithIV(key, DES::DEFAULT_KEYLENGTH, iv);
+        StringSource s(cipher, true,
+            new StreamTransformationFilter(dec,
+                new StringSink(plain))
+        );
+        cout << "recovered text: " << plain << endl;
+    }
+    catch(const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    return plain;
 }
+// end of edited code 
+
 int main(int argc,char * argv[])
 {
 	ifstream file1;
 	ofstream file2;
     
 	byte key[DES::DEFAULT_KEYLENGTH]={'1','2','3','4','a','b','c','d'}; //key is hardcoded;
+	//edited code
+	byte iv[DES::BLOCKSIZE] = {'a','b','c','d','1','2','3','4'};
+	//end of edited code
 	
 	if(argc!=3)
 	{
@@ -62,7 +71,7 @@ int main(int argc,char * argv[])
 	cout << "key: " << encoded << endl;
 	
 	//decryption; 
-	string plain=des_decode(cipher,key);
+	string plain=des_decode(cipher,key,iv);
 	
 	file2<<plain;
 	
