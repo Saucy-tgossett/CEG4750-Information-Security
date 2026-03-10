@@ -14,30 +14,38 @@ using namespace std;
 
 using namespace CryptoPP;
 
-string des_encode(string & plain,byte key[])
+// edited code below
+string des_encode(string & plain, byte key[], byte iv[])
 {
-	string cipher;
-	try
-	{
-		//cout << "plain text: " << plain << endl;
-		ECB_Mode<DES>::Encryption enc;
-		enc.SetKey(key, DES::DEFAULT_KEYLENGTH);
-		StringSource(plain, true, new StreamTransformationFilter(enc, new StringSink(cipher)));//add padding by StreamTransformationFilter 
-	}
-	catch(const CryptoPP::Exception& e)
-	{
-		cerr << e.what() << endl;
-		exit(1);
-	}
-	return cipher;
+    string cipher;
+    try
+    {
+        CBC_Mode<DES>::Encryption enc;
+        enc.SetKeyWithIV(key, DES::DEFAULT_KEYLENGTH, iv);
+        StringSource(plain, true,
+            new StreamTransformationFilter(enc,
+                new StringSink(cipher))
+        );
+    }
+    catch(const CryptoPP::Exception& e)
+    {
+        cerr << e.what() << endl;
+        exit(1);
+    }
+    return cipher;
 }
+// end of edit
 
 int main(int argc, char * argv[])
 {
 	ifstream file1;
 	ofstream file2;
 	byte key[DES::DEFAULT_KEYLENGTH]={'1','2','3','4','a','b','c','d'}; //key is hardcoded
-	
+	// edit
+	byte iv[DES::BLOCKSIZE] = {'a','b','c','d','1','2','3','4'};
+	// end of edit
+
+
 	if(argc!=3)
 	{
 		cout<<"usage:des_encode infile outfile" << endl;
@@ -66,7 +74,7 @@ int main(int argc, char * argv[])
 	
 	//encrypt
 	
-	string cipher=des_encode(plain,key);
+	string cipher=des_encode(plain,key,iv);
 	file2<<cipher;
 	
 	cout<<"cipher text stored in:"<<argv[2]<<endl;
