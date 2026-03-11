@@ -8,26 +8,26 @@
 
 <p align="center">
    
-   ![](images/Printed_encrypted_file.png)
+   ![Image of the printed encrypted files](images/Printed_encrypted_file.png)
 </p>
 
 <p align="center">
    
-   ![](images/Printed_encrypted_file2.png)
+   ![Image of the printed encrypted files](images/Printed_encrypted_file2.png)
 </p>
 
 ### Sub-task 2: Comparing
 
 <p align="center">
    
-   ![](images/byte_diff.png)
+   ![Image of the byte difference](images/byte_diff.png)
 </p>
 
 ### Sub-task 3: Using `diff`
 
 <p align="center">
    
-   ![](images/difference.png)
+   ![Image comparing files using `diff`](images/difference.png)
 </p>
 
 ## Task 2: Edit and Verify
