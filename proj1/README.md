@@ -2,11 +2,18 @@
 
 ## Task 1: Compile
 
+#### Encoding
 
+![Image of the encryption process](images/Encoded_files.png)
+
+#### decoding
+
+![Image of the decryption process](images/decoded_files.png)
 
 ### Sub-task 1: Print encrypted file
   
 ![Image of the printed encrypted files](images/Printed_encrypted_file.png)
+
 ![Image of the printed encrypted files](images/Printed_encrypted_file2.png)
 
 
