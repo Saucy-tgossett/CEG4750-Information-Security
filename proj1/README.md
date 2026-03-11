@@ -6,7 +6,7 @@
 
 ![Image of the encryption process](images/Encoded_files.png)
 
-#### decoding
+#### Decoding
 
 ![Image of the decryption process](images/decoded_files.png)
 
