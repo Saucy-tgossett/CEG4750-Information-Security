@@ -5,30 +5,21 @@
 
 
 ### Sub-task 1: Print encrypted file
+  
+![Image of the printed encrypted files](images/Printed_encrypted_file.png)
+![Image of the printed encrypted files](images/Printed_encrypted_file2.png)
 
-<p align="center">
-   
-   ![Image of the printed encrypted files](images/Printed_encrypted_file.png)
-</p>
 
-<p align="center">
-   
-   ![Image of the printed encrypted files](images/Printed_encrypted_file2.png)
-</p>
 
 ### Sub-task 2: Comparing
 
-<p align="center">
-   
-   ![Image of the byte difference](images/byte_diff.png)
-</p>
+![Image of the byte difference](images/byte_diff.png)
+
 
 ### Sub-task 3: Using `diff`
 
-<p align="center">
-   
-   ![Image comparing files using `diff`](images/difference.png)
-</p>
+![Image comparing files using `diff`](images/difference.png)
+
 
 ## Task 2: Edit and Verify
 
