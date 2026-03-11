@@ -8,26 +8,26 @@
 
 <p align="center">
    
-   ![Gossett](images/Printed_encrypted_file.png)
+   ![](images/Printed_encrypted_file.png)
 </p>
 
 <p align="center">
    
-   ![Gossett](images/Printed_encrypted_file2.png)
+   ![](images/Printed_encrypted_file2.png)
 </p>
 
 ### Sub-task 2: Comparing
 
 <p align="center">
    
-   ![Gossett](images/byte_diff.png)
+   ![](images/byte_diff.png)
 </p>
 
 ### Sub-task 3: Using `diff`
 
 <p align="center">
    
-   ![Gossett](images/difference.png)
+   ![](images/difference.png)
 </p>
 
 ## Task 2: Edit and Verify
