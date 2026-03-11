@@ -23,3 +23,4 @@
 
 ## Task 2: Edit and Verify
 
+![Image fulfilling tasks two req](images/Task_2.png)
