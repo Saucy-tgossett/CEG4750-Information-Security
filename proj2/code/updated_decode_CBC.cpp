@@ -18,7 +18,7 @@ string aes_decode(string & cipher,byte key[], byte iv[])
 {
 	string plain;
 	try{
-		ECB_Mode< AES >::Decryption dec;
+		CBC_Mode< AES >::Decryption dec;
 		dec.SetKeyWithIV(key, AES::DEFAULT_KEYLENGTH, iv);
 		StringSource s(cipher, true, new StreamTransformationFilter(dec, new StringSink(plain)));  
 	}
