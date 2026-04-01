@@ -19,7 +19,7 @@ string aes_encode(string & plain,byte key[], byte iv [])
 {
 	string cipher;
 	try{
-		ECB_Mode<AES>::Encryption enc;
+		CBC_Mode<AES>::Encryption enc;
 		enc.SetKeyWithIV(key, AES::DEFAULT_KEYLENGTH, iv);
 		StringSource(plain, true, new StreamTransformationFilter(enc, new StringSink(cipher)));//add padding by StreamTransformationFilter 
 	}
